@@ -27,5 +27,22 @@ Create database structure:
 bin/console doctrine:migrations:migrate
 ```
 
+Make commands:
+
+Reset Test DB:
+```
+make reset-test-db
+```
+
+Run tests:
+```
+make qa
+```
+
+Run fixers:
+```
+make fix
+```
+
 The project can be accessed at [http://localhost:8080]().
 
