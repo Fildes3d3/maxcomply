@@ -9,7 +9,7 @@ services:
         public: true
 
     App\:
-        resource: '../src/{Services,Repository}'
+        resource: '../src/{Services,Repository,Security}'
         exclude:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
