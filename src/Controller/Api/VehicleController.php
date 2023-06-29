@@ -23,7 +23,7 @@ class VehicleController extends BaseController
     {
         $vehicle = $this->em->getRepository(Vehicle::class)->findOneBy(['id' => $id]);
 
-        return $this->json($vehicle->getTechData(), Response::HTTP_OK);
+        return $this->json(\array_slice($vehicle->getTechData(), 0, 10), Response::HTTP_OK);
     }
 
     #[Route('/tech-data/{param}/update/{id}', name: 'vehicle_tech_data_param_update', requirements: ['param' => '(type|engineData|topSpeed|dimensions)'], methods: ['PATCH'])]
@@ -38,5 +38,35 @@ class VehicleController extends BaseController
         $vehicle->setTechData($techData);
 
         return $this->json($vehicle, Response::HTTP_OK);
+    }
+
+    #[Route('/', name: 'vehicle_list', methods: ['GET'])]
+    public function list()
+    {
+        //TODO method implementation
+    }
+
+    #[Route('/{id}', name: 'vehicle_self', methods: ['GET'])]
+    public function self()
+    {
+        //TODO method implementation
+    }
+
+    #[Route('/', name: 'vehicle_add', methods: ['POST'])]
+    public function add()
+    {
+        //TODO method implementation
+    }
+
+    #[Route('/{id}', name: 'vehicle_update', methods: ['PUT'])]
+    public function update()
+    {
+        //TODO method implementation
+    }
+
+    #[Route('/{id}', name: 'vehicle_remove', methods: ['DELETE'])]
+    public function remove()
+    {
+        //TODO method implementation
     }
 }

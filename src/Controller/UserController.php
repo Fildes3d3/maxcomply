@@ -11,6 +11,18 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('user')]
 class UserController extends AbstractController
 {
+    #[Route('/', name: 'user_list', methods: ['GET'])]
+    public function list()
+    {
+        //TODO method implementation
+    }
+
+    #[Route('/{id}', name: 'user_self', methods: ['GET'])]
+    public function self()
+    {
+        //TODO method implementation
+    }
+
     #[Route('/', name: 'user_add', methods: ['POST'])]
     public function add(Request $request, UserManager $userManager): Response
     {
@@ -23,5 +35,17 @@ class UserController extends AbstractController
         }
 
         return $this->json($user, Response::HTTP_CREATED);
+    }
+
+    #[Route('/{id}', name: 'user_update', methods: ['PUT'])]
+    public function update()
+    {
+        //TODO method implementation
+    }
+
+    #[Route('/{id}', name: 'user_remove', methods: ['DELETE'])]
+    public function remove()
+    {
+        //TODO method implementation
     }
 }
